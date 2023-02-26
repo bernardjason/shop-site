@@ -1,0 +1,55 @@
+.loginButton {
+    text-align: left ;
+}
+.loginRow {
+    vertical-align: middle;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+.loginBox {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.label {
+    vertical-align: bottom;
+    margin-top:12px;
+    margin-right: 10px;
+}
+.loginStatus {
+    width: 80%;
+}
+.navbarLogin {
+  font-size: large;
+  color: yellow;
+}
+.navbar {
+  margin-bottom: 10px;
+}
+.containerTitle {
+  background-color: lightblue;
+  color :blue;
+  padding: 10px;
+}
+
+.tableHeader{
+  background-color: rgb(213, 223, 230);
+  color: blue;
+}
+
+.main {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.rowlist {
+  align-items: center;
+  border-bottom-style: solid  ;
+  border-bottom-width: 0.01em;
+  border-bottom-color: lightgray;
+
+}
+
+.emptybasket {
+  text-align: center;
+}
