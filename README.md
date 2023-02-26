@@ -36,7 +36,7 @@ There are 2 users configured, usernames
 
 - jason
 
-the password for both it any string of more than 1 character
+the password for both it any string of more than 2 character
 
 # Docker
 

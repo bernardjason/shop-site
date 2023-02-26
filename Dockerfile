@@ -21,5 +21,5 @@ RUN a2enmod rewrite
 RUN chown www-data ./backend/db
 RUN chgrp www-data ./backend/db
 RUN chown www-data ./backend/db/db.sqlite3
-EXPOSE 8000
+EXPOSE 8080
 CMD ["apachectl", "-D", "FOREGROUND"]
