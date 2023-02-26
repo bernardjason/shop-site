@@ -24,6 +24,16 @@ python manage.py runserver
 ```
 
 to npm dev server to host React website
+
+install npm if it isnt on your system, for example on ubuntu
+```
+sudo apt-get install npm
+```
+From cloned directory
+```
+npm install
+```
+
 ```
 npm start
 ```
