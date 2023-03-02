@@ -2,23 +2,29 @@
 
 Developed with Python3 and React 18.2.0. Setup uses a sqlite flat file for the DB. This is not production code!
 
-You can buy items anonymously, log onto site, and checkout items if they are in stock.
+You can buy items anonymously, log onto site, then checkout items if they are in stock.
 
-<img src="images/shop1.png" width="30%"/>
-<img src="images/shop2.png" width="30%"/>
-<img src="images/shop3.png" width="30%"/>
-<img src="images/shop4.png" width="30%"/>
-<img src="images/shop5.png" width="30%"/>
-<img src="images/shop6.png" width="30%"/>
+<table>
+<tr valign="top">
+<td><img src="images/shop1.png" /></td><td><img src="images/shop2.png"/></td>
+</tr>
+<tr valign="top">
+<td><img src="images/shop3.png" /></td><td><img src="images/shop4.png"/></td>
+</tr>
+<tr valign="top">
+<td><img src="images/shop5.png" /></td><td><img src="images/shop6.png"></td>
+</tr>
+</table>
 
 # To start Django backend with sqlite DB and React front end
 
+## make sure React development server is pointed to Django backend
 To get React dev to use Django change package.json proxy to
 ```
 proxy": "http://localhost:8000
 ```
 
-## setup Django
+## setup Django backend
 
 Create a virtualenv and load dependencies.
 
@@ -58,6 +64,8 @@ Start the development webserver
 npm start
 ```
 
+## to test
+
 go to http://127.0.0.1:3000
 
 There are 2 users configured for the shop application, usernames are
@@ -72,7 +80,7 @@ the password for both is any string of more than 2 character
 
 the project can be run in a Docker container, with Apache wsgi fronting Django.
 
-Steps are to package React first, generating html/js. Then build the Docker container
+You have to package React first, generating static html/js. Then build the Docker container that takes React, Django and some Apache Httpd configuration files to make the Docker image
 
 ```
 npm run build
@@ -80,9 +88,10 @@ docker build -t shop .
 docker run --rm --network host -d --name shop shop 
 ```
 
-The Docker container will start an Apache http webserver hosting the static website. It will also connect to Django backend for API calls.
+The Docker image will start an Apache http webserver hosting the static website. It will also connect to Django backend for API calls using wsgi.
 The database is still the sqlite filesystem flat file which is fine for demonstration/dev/playing.
 
+## to test via Docker
 To access running container visit http://127.0.0.1:8080
 
 # Mock api for testing
