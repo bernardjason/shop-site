@@ -1,6 +1,15 @@
 # Shop app using React and Django
 
-Developed with Python3 and React 18.2.0. Setup uses a sqlite flat file for the DB. This is not production
+Developed with Python3 and React 18.2.0. Setup uses a sqlite flat file for the DB. This is not production code!
+
+You can buy items anonymously, log onto site, and checkout items if they are in stock.
+
+<img src="images/shop1.png" width="30%"/>
+<img src="images/shop2.png" width="30%"/>
+<img src="images/shop3.png" width="30%"/>
+<img src="images/shop4.png" width="30%"/>
+<img src="images/shop5.png" width="30%"/>
+<img src="images/shop6.png" width="30%"/>
 
 # To start Django backend with sqlite DB and React front end
 
@@ -9,48 +18,61 @@ To get React dev to use Django change package.json proxy to
 proxy": "http://localhost:8000
 ```
 
-setup Django
+## setup Django
+
+Create a virtualenv and load dependencies.
+
 ```
 cd backend
 python3.9 -m venv venvshop
 source venvshop/bin/activate
 pip install -r requirements.txt
 ```
+If using Windows, difference in setting up environment variables
+```
+venvshop/Script/activate
+```
 
+## start Django backend
 ```
 source venvshop/bin/activate
 cd shopapp
 python manage.py runserver
 ```
 
-to npm dev server to host React website
+## start the React app in development mode
+to run React website in development mode 
 
-install npm if it isnt on your system, for example on ubuntu
+You may need to install npm if it isn't on your system, for example on ubuntu
 ```
 sudo apt-get install npm
 ```
-From cloned directory
+
+Then from cloned directory setup
 ```
 npm install
 ```
 
+Start the development webserver
 ```
 npm start
 ```
 
 go to http://127.0.0.1:3000
 
-There are 2 users configured, usernames
+There are 2 users configured for the shop application, usernames are
 
 - bern
 
 - jason
 
-the password for both it any string of more than 2 character
+the password for both is any string of more than 2 character
 
-# Docker
+# Deploy using Docker
 
-the project can be run in a Docker container, with Apache wsgi fronting Django
+the project can be run in a Docker container, with Apache wsgi fronting Django.
+
+Steps are to package React first, generating html/js. Then build the Docker container
 
 ```
 npm run build
@@ -58,7 +80,10 @@ docker build -t shop .
 docker run --rm --network host -d --name shop shop 
 ```
 
-Visit http://127.0.0.1:8080
+The Docker container will start an Apache http webserver hosting the static website. It will also connect to Django backend for API calls.
+The database is still the sqlite filesystem flat file which is fine for demonstration/dev/playing.
+
+To access running container visit http://127.0.0.1:8080
 
 # Mock api for testing
 There is a mock backend api using connect-api-mocker that can be used.
@@ -77,11 +102,6 @@ To get React dev to use this change package.json proxy to
 ```
 proxy": "http://localhost:9000/api
 ```
-
------------------------------------------------------------------------------------------------------------------------
-
-## bootstrap
-npm install --save bootstrap@latest
 
 ----------------------------------------------------------------------
 
