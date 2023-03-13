@@ -1,20 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse,HttpRequest
-from django.core import serializers
-from .models import Stock, Basket, Login
-import json
-from django.db.models import Prefetch
-import uuid
-from django.db import transaction
 import logging
-import time,random
+import time
+
+from django.http import JsonResponse
+
+from .models import Stock
 
 # Create your views here.
 
 logger = logging.getLogger('shop')
 
 def random_pause():
-    sleep = random.uniform(0.0,1.0)
+    sleep = 0.0 # random.uniform(0.0,1.0)
     logger.info("SLEEP ..... "+str(sleep))
     time.sleep(sleep)
 

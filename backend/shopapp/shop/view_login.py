@@ -1,13 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse,HttpRequest
-from django.core import serializers
-from .models import Stock, Basket, Login
+from django.http import HttpResponse,JsonResponse
 import json
-from django.db.models import Prefetch
-import uuid
-from django.db import transaction
 import logging
 import uuid
+
+from django.http import HttpResponse, JsonResponse
+
+from .models import Basket, Login
 
 # Create your views here.
 

@@ -16,6 +16,8 @@ You can buy items anonymously, log onto site, then checkout items if they are in
 </tr>
 </table>
 
+the app is hosted here to test http://bjason.org:8080
+
 # To start Django backend with sqlite DB and React front end
 
 ## make sure React development server is pointed to Django backend
@@ -40,7 +42,9 @@ venvshop/Script/activate
 ```
 
 ## start Django backend
+for development setting DJANGO_DEBUG disables CSRF check
 ```
+export DJANGO_DEBUG=set
 source venvshop/bin/activate
 cd shopapp
 python manage.py runserver

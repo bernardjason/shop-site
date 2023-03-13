@@ -1,0 +1,3 @@
+export DJANGO_DEBUG=fred
+then....
+python manage.py runserver
