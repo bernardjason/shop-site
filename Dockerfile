@@ -10,6 +10,7 @@ WORKDIR /shop
 ADD backend/requirements.txt .
 RUN pip3 install -r requirements.txt
 ADD backend/shopapp backend/
+RUN sed -i "s/SECRET_KEY =.*/SECRET_KEY =  '$(cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-50} | head -1)'/" backend/shopapp/settings.py
 ADD build build/
 #  make sure we have latest template from react for Django to render
 RUN cp build/index.html backend/shop/templates/index.html
